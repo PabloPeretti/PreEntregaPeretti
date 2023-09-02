@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tienda de Ropa</h1>
+        <nav>
+            <ul>
+                <li><a href="#camisetas">Camisetas</a></li>
+                <li><a href="#pantalones">Pantalones</a></li>
+                <li><a href="#accesorios">Accesorios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="camisetas" class="productos">
+        <h2>Camisetas</h2>
+        <article class="producto">
+            <img src="/imagenes/oversize azul.webp" alt="Oversize azul">
+            <h3>Oversize azul</h3>
+            <p>Precio: $2000</p>
+            <label for="cantidad-azul">Cantidad:</label>
+            <input type="number" id="cantidad-azul" value="1" min="1">
+            <button class="agregar-carrito" data-producto="Oversize azul">Agregar al carrito</button>
+        </article>
+    </section>
+
+    <section id="pantalones" class="productos">
+        <h2>Pantalones</h2>
+        <article class="producto">
+            <img src="/imagenes/oversize gris.jpg" alt="Oversize Gris">
+            <h3>Oversize Gris</h3>
+            <p>Precio: $3000</p>
+            <label for="cantidad-azul">Cantidad:</label>
+            <input type="number" id="cantidad-azul" value="1" min="1">
+            <button class="agregar-carrito" data-producto="Oversize Gris">Agregar al carrito</button>
+        </article>
+    </section>
+
+    <section id="accesorios" class="productos">
+        <h2>Accesorios</h2>
+        <article class="producto">
+            <img src="/imagenes/oversize negra.jpg" alt="Oversize negra">
+            <h3>Oversize negra</h3>
+            <p>Precio: $3000</p>
+            <label for="cantidad-azul">Cantidad:</label>
+            <input type="number" id="cantidad-azul" value="1" min="1">
+            <button class="agregar-carrito" data-producto="Oversize negra">Agregar al carrito</button>
+        </article>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+    </section>
+
+    <div id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total a pagar: <span id="total-pagar">$0</span></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Tienda de Ropa</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
