@@ -1,28 +1,17 @@
-// Variables para el carrito y el total
-const carrito = document.querySelector('#lista-carrito');
-const totalPagar = document.querySelector('#total-pagar');
-let total = 0;
+const contenedorTarjetas = document.getElementById("productos-container");
 
-// Función para agregar un producto al carrito
-function agregarProductoAlCarrito(nombre, precio) {
-    // Crear un elemento de lista para el producto
-    const producto = document.createElement('li');
-    producto.textContent = `${nombre}: $${precio}`;
-
-    // Agregar el producto al carrito
-    carrito.appendChild(producto);
-
-    // Actualizar el total
-    total += precio;
-    totalPagar.textContent = `$${total}`;
+/** Crea las tarjetas de productos teniendo en cuenta la lista en zapatillas.js */
+function crearTarjetasProductosInicio(productos){
+  productos.forEach(producto => {
+    const nuevazapatilla = document.createElement("div");
+    nuevazapatilla.classList = "tarjeta-producto"; 
+    nuevazapatilla.innerHTML = `
+    <img src="./imagenes/Productos/${producto.id}.jpg" alt="zapatilla1">
+    <h3>${producto.nombre}</h3>
+    <p class="precio">$${producto.precio}</p>
+    <button>Agregar al carrito</button>`
+    contenedorTarjetas.appendChild(nuevazapatilla);
+    nuevazapatilla.getElementsByTagName("button")[0].addEventListener("click",() => agregarAlCarrito(producto))
+  });
 }
-
-// Event listener para los botones "Agregar al carrito"
-const botonesAgregar = document.querySelectorAll('.agregar-carrito');
-botonesAgregar.forEach((boton) => {
-    boton.addEventListener('click', (e) => {
-        const productoNombre = e.target.getAttribute('data-producto');
-        const productoPrecio = parseInt(e.target.previousElementSibling.textContent.replace('Precio: $', ''), 10);
-        agregarProductoAlCarrito(productoNombre, productoPrecio);
-    });
-});
+crearTarjetasProductosInicio(zapatillas);
